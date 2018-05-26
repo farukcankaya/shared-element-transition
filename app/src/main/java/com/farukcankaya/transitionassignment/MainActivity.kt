@@ -11,8 +11,10 @@ import android.widget.ImageView
 
 class MainActivity : AppCompatActivity(), Adapter.ItemClickListener {
 
-    val EXTRA_ITEM = "image_url"
-    val EXTRA_IMAGE_TRANSITION_NAME = "image_transition_name"
+    companion object {
+        val EXTRA_ITEM = "image_url"
+        val EXTRA_IMAGE_TRANSITION_NAME = "image_transition_name"
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,7 +29,7 @@ class MainActivity : AppCompatActivity(), Adapter.ItemClickListener {
     }
 
     override fun onItemClick(pos: Int, item: String, shareImageView: ImageView) {
-        val intent = Intent(this, MainActivity::class.java)
+        val intent = Intent(this, FullScreenActivity::class.java)
         intent.putExtra(EXTRA_ITEM, item)
         intent.putExtra(EXTRA_IMAGE_TRANSITION_NAME, ViewCompat.getTransitionName(shareImageView))
 

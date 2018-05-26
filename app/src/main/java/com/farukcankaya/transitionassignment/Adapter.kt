@@ -27,7 +27,7 @@ class Adapter(private val items: ArrayList<String>, private val itemClickListene
         val item: String = items.get(position)
 
         Picasso.with(holder.itemView.context)
-                .load("https://picsum.photos/240/240/?image="+item)
+                .load("https://picsum.photos/100/100/?image="+item)
                 .into(holder.imageView)
 
         ViewCompat.setTransitionName(holder.imageView, item)
